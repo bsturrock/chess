@@ -295,3 +295,46 @@
         opacity: 25%;
     }
 }
+
+.difficulty {
+    margin-left: 25px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-family: 'Menlo';
+}
+
+#difficulty{
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Menlo';
+    border: 1px solid transparent;
+}
+
+#difficulty.easy{
+    background-color: greenyellow;
+}
+
+#difficulty.easy:hover{
+    cursor: pointer;
+    background-color: rgb(201, 255, 120);
+}
+
+#difficulty.hard {
+    background-color: coral;
+}
+
+#difficulty.hard:hover {
+    cursor: pointer;
+    background-color: rgb(255, 168, 137);
+}
+
+#difficulty.impossible{
+    background-color: crimson;
+}
+
+#difficulty.impossible:hover{
+    cursor: pointer;
+    background-color: rgb(236, 88, 118);
+}

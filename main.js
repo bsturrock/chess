@@ -8,10 +8,13 @@ let user_checkmate = false
 let enemy_checkmate = false
 
 
+const difficulty_button = document.querySelector('#difficulty')
 
-document.querySelector('#difficulty').innerText = current_diff
+difficulty_button.innerText = current_diff
+difficulty_button.classList.add(current_diff)
 
 const change_difficulty = () => {
+    difficulty_button.classList.remove('easy', 'hard', 'impossible')
     if(current_diff == 'easy'){
         current_diff = 'hard'
         max = 3;
@@ -22,7 +25,8 @@ const change_difficulty = () => {
         current_diff = 'easy'
         max = 7;
     }
-    document.querySelector('#difficulty').innerText = current_diff
+    difficulty_button.innerText = current_diff
+    difficulty_button.classList.add(current_diff)
 }
 
 active_piece = {
