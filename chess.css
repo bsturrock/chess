@@ -1,0 +1,297 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+.light {
+    background-color: #D2B48C;
+    position: relative;
+    border: 2px solid #D2B48C;
+}
+.dark {
+    background-color: #8B4513;
+    position: relative;
+    border: 2px solid #8B4513;
+}
+.light.white:hover{
+    background-color: #ebcca3;
+    border: 2px solid #ebcca3;
+    cursor: pointer;
+}
+
+.dark.white:hover{
+    background-color: #a55822;
+    border: 2px solid #a55822;
+    cursor: pointer;
+}
+
+
+.board {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    margin-top: 25px;
+    width: fit-content;
+    border: 3px solid rgb(100,100,100);
+    box-shadow: 5px 5px 15px rgb(100,100,100);
+}
+
+.pawn.white::after{
+    content: "";
+    background-image: url('./images/white_pawn.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.pawn.black::after{
+    content: "";
+    background-image: url('./images/black_pawn.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    z-index: 99;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.knight.white::after{
+    content: "";
+    background-image: url('./images/white_knight.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.knight.black::after{
+    content: "";
+    background-image: url('./images/black_knight.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    z-index: 99;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.bishop.black::after{
+    content: "";
+    background-image: url('./images/black_bishop.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.bishop.white::after{
+    content: "";
+    background-image: url('./images/white_bishop.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    z-index: 99;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.rook.black::after{
+    content: "";
+    background-image: url('./images/black_rook.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.rook.white::after{
+    content: "";
+    background-image: url('./images/white_rook.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    z-index: 99;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.queen.black::after{
+    content: "";
+    background-image: url('./images/black_queen.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.queen.white::after{
+    content: "";
+    background-image: url('./images/white_queen.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    z-index: 99;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.king.black::after{
+    content: "";
+    background-image: url('./images/black_king.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.king.white::after{
+    content: "";
+    background-image: url('./images/white_king.png');
+    background-size: cover;
+    min-height: 70px;
+    min-width: 70px;
+    display: inline-block;
+    z-index: 99;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+
+
+.light.move {
+    border: 2px solid rgb(255, 170, 244) !important;
+    background-color: rgb(255, 170, 244) !important;
+}
+
+.light.move:hover {
+    background-color:rgb(255, 186, 246) !important;
+    border: 2px solid rgb(255, 186, 246) !important;
+    cursor: pointer;
+}
+
+.dark.move{
+    border: 2px solid rgb(214, 142, 205) !important;
+    background-color: rgb(214, 142, 205) !important;
+}
+
+.dark.move:hover {
+    background-color:rgb(213, 157, 206) !important;
+    border: 2px solid rgb(213, 157, 206) !important;
+    cursor: pointer;
+}
+
+.light.capture{
+    border: 2px solid rgb(255, 170, 244) !important;
+    background-color: rgb(255, 170, 244) !important;
+}
+
+.dark.capture{
+    border: 2px solid rgb(214, 142, 205) !important;
+    background-color: rgb(214, 142, 205) !important;
+}
+
+.dark.capture:hover {
+    background-color:rgb(213, 157, 206) !important;
+    border: 2px solid rgb(213, 157, 206) !important;
+    cursor: pointer;
+}
+
+.light.capture:hover {
+    background-color:rgb(255, 186, 246) !important;
+    border: 2px solid rgb(255, 186, 246) !important;
+    cursor: pointer;
+}
+
+.active {
+    background-color: rgb(255, 0, 221) !important;
+    border: 2px solid rgb(255, 0, 221) !important;
+}
+
+
+.check {
+    border: 2px solid rgb(255, 253, 137) !important;
+    background-color: rgb(255, 253, 137) !important; 
+    box-shadow: 5px 5px 5px rgb(255, 253, 137);
+}
+
+#message {
+    display: block;
+    padding-top: 25px;
+    font-size: 35px;
+    max-width:640px;
+    font-weight: bold;
+    text-align: center;
+
+    font-family: 'Menlo';
+}
+
+.blink{
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.from {
+    border: 2px solid rgb(193, 255, 255) !important;
+    background-color: rgb(193, 255, 255) !important;
+}
+
+.to {
+    background-color: cyan !important;
+    border: 2px solid cyan;
+}
+
+@keyframes blink {
+    0%{
+        opacity: 25%;
+    }
+    50%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 25%;
+    }
+}
